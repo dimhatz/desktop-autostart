@@ -33,15 +33,9 @@ echo "Creating $targetdir to place new files from $dir"
 mkdir -p $targetdir
 echo "...done"
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+echo "Backing up old files and writing new ones"
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
     mv --verbose $targetdir/$file $olddir/
-    echo "Creating symlinks to $file in $targetdir"
-    ln -s --verbose $dir/$file $targetdir/$file
+    cp --verbose $dir/$file $targetdir/$file
 done
