@@ -2,5 +2,4 @@
 Exec=sh -c "xcape -e 'Shift_L=parenleft;Shift_R=parenright;Control_L=Shift_L|bracketleft;Control_R=Shift_R|bracketright'"
 Name=xcape
 
-OnlyShowIn=KDE;
 Type=Application
